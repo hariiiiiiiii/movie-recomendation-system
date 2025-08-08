@@ -5,9 +5,9 @@ import requests
 import time
 
 
-movies_df = pickle.load(open('/Users/jagan/Desktop/scipy/projects/movies.pkl','rb'))
+movies_df = pickle.load(open('movies.pkl','rb'))
 movie_titles = movies_df['title'].values
-similarity = pickle.load(open('/Users/jagan/Desktop/scipy/projects/similarity.pkl','rb'))
+similarity = pickle.load(open('similarity.pkl','rb'))
 
 TMDB_TOKEN = st.secrets["TMDB_TOKEN"]
 
