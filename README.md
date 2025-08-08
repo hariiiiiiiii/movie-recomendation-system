@@ -84,4 +84,14 @@ movie-recommendation-system/
 ```
 
 
+### Installing spaCy and the Language Model
+
+Before running the app, make sure to install spaCy and download the required English language model:
+
+```bash
+pip install spacy
+python -m spacy download en_core_web_lg
+
+
+
 
