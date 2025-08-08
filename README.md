@@ -91,6 +91,7 @@ Before running the app, make sure to install spaCy and download the required Eng
 ```bash
 pip install spacy
 python -m spacy download en_core_web_lg
+```
 
 
 
