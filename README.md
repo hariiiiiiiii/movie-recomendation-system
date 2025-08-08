@@ -1,8 +1,8 @@
 # Content-Based Movie Recommendation System
 
 ### 🔴 Live Demo
-**You can try the live application here:** [https://your-streamlit-app-url.streamlit.app](https://your-streamlit-app-url.streamlit.app)
-*(Note: Replace with your actual URL after deployment)*
+**You can try the live application here:** https://harich.streamlit.app/
+
 
 ---
 
