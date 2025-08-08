@@ -1,52 +1,87 @@
 # Content-Based Movie Recommendation System
 
-### 🔴 Live Demo
-**You can try the live application here:** https://harich.streamlit.app/
-
-
----
-
-### Project Overview
-
-This project is an end-to-end movie recommendation system that suggests films based on their content. The model was developed using Natural Language Processing (NLP) to understand the semantic context of movies, and the final application was deployed as an interactive web app with Streamlit.
-
-* **Core Function:** Recommends movies by analyzing plot, genre, keywords, cast, and crew.
-* **Key Technology:** Leverages **`spaCy`'s** advanced NLP capabilities to convert movie data into meaningful vectors, enabling intelligent, context-aware recommendations.
-* **API Integration:** Fetches movie posters from The Movie Database (TMDB) API in real-time to create a dynamic and visually engaging user interface.
-* **Deployment:** The entire system is packaged into a user-friendly Streamlit application, demonstrating skills in both data science and application deployment.
-
-### Tech Stack
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![spaCy](https://img.shields.io/badge/spaCy-09A3D5?style=for-the-badge&logo=python&logoColor=white)
-![Scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626.svg?style=for-the-badge&logo=Jupyter&logoColor=white)
+**Live Demo**  
+Try the live application here: [https://harich.streamlit.app/](https://harich.streamlit.app/)
 
 ---
 
-### Methodology
+## Project Overview
 
-The recommendation engine was built using the following steps:
+This project is an end-to-end content-based movie recommendation system that suggests movies based on their plot, genre, keywords, cast, and crew. It leverages advanced Natural Language Processing (NLP) techniques to understand the semantic context of movies for intelligent recommendations.
 
-1.  **Feature Engineering:** Key data points from the TMDB dataset (genres, keywords, overview, cast, director) were extracted and merged into a single "tag" for each movie. This creates a comprehensive content profile for every film.
-
-2.  **Semantic Vectorization:** Instead of simple keyword matching, `spaCy`'s `en_core_web_lg` model was used to transform each movie's tag into a sophisticated 300-dimensional vector. These vectors capture the semantic meaning of the movie's content.
-
-3.  **Similarity Calculation:** `scikit-learn`'s `cosine_similarity` was applied to the vector matrix to calculate the contextual closeness between every pair of movies. Movies with the highest similarity scores are then recommended.
-
-### Performance Note
-
-To ensure the application is a stable and responsible consumer of the TMDB API, intentional delays and error-handling logic have been implemented to manage API rate limits. This may result in a brief loading period as movie posters are fetched in real-time.
+- **Core Function:** Recommends movies by analyzing and comparing their content profiles.
+- **Key Technology:** Uses **spaCy's** powerful NLP model to convert movie information into rich semantic vectors for meaningful similarity comparison.
+- **API Integration:** Dynamically fetches movie posters from The Movie Database (TMDB) API to create an engaging UI.
+- **Deployment:** Packaged as a user-friendly Streamlit web application showcasing both data science and deployment skills.
 
 ---
 
-### Run Locally
+## Tech Stack
 
-To set up and run this project on your local machine:
+- Python  
+- spaCy (en_core_web_lg model)  
+- Scikit-learn  
+- Pandas  
+- NumPy  
+- Streamlit  
+- Jupyter Notebook  
 
-**1. Clone the repository:**
+---
+
+## Methodology
+
+1. **Feature Engineering:**  
+   Extracted key attributes such as genres, keywords, overview, cast, and director from the TMDB dataset. These attributes were combined into a single "tag" representing each movie’s content.
+
+2. **Semantic Vectorization:**  
+   Instead of basic keyword matching, spaCy’s `en_core_web_lg` model was used to transform each movie's tag into a 300-dimensional semantic vector, capturing deeper contextual meaning.
+
+3. **Similarity Calculation:**  
+   Used scikit-learn's `cosine_similarity` on these vectors to measure semantic closeness between movies. The system recommends movies with the highest similarity scores.
+
+---
+
+## Performance Note
+
+Due to TMDB API rate limitations, fetching movie posters in real-time can introduce longer loading times. The application includes intentional delays and error handling to respect these API limits and ensure stable performance.
+
+---
+
+## Run Locally
+
+1. Clone the repository:
+
 ```bash
-git clone [https://github.com/your-username/movie-recommendation-system.git](https://github.com/your-username/movie-recommendation-system.git)
+git clone https://github.com/your-username/movie-recommendation-system.git
 cd movie-recommendation-system
+```
+2. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+python -m spacy download en_core_web_lg
+```
+
+3. Run the Streamlit app:
+
+```bash
+streamlit run app.py
+```
+
+
+## Folder Structure (Example)
+
+```perl
+
+movie-recommendation-system/
+│
+├── app.py                   # Main Streamlit app file
+├── movies.pkl               # Pickled dataframe with movie data
+├── similarity.pkl           # Pickled similarity matrix
+├── requirements.txt         # Python dependencies
+├── README.md
+└── utils.py                 # (Optional) utility functions for API calls, etc.
+```
+
+
+
